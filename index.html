@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="QrGen.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script> 
     tailwind.config = {
         theme: {
@@ -18,12 +16,17 @@
         },
     };
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" 
+integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="QrGen.js" defer></script>
 <style>
     #spinner{
         display:none;
     }
 </style>
-    <title>QR Code Generator</title>
+    
+<title>QR Code Generator</title>
 
 </head>
 <body>
@@ -45,18 +48,21 @@
                 Generate your code bellow
             </p>
             <form id="generate-form" class="mt-4">
-                <input  
+                <input
+                id="url"  
                 class="w-full border-2 
                 border-gray-200 rounded p-3 
                 text-gray-dark mr-2 
                 focus:outline-none mb-5"
                 placeholder="Enter a URL"/>
 
-                <select id="size"
+                <select 
                 class="w-full border-2 
                 border-gray-200 rounded p-3 
                 text-gray-dark mr-2 
-                focus:outline-none">
+                focus:outline-none"
+                name="size"
+                id="size">
                 <option value="100">100x100</option>
                 <option value="200">200x200</option>
                 <option value="300">300x300</option>
